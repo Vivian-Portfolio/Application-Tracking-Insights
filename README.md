@@ -225,5 +225,5 @@ This project used an *exploratory data analysis* approach - examining the cleane
 - 🔗 [LinkedIn URL]
 - 💼 [Portfolio or GitHub profile URL]
 - 📧 [Email - optional]
-
+---
 *Last updated: [Month YYYY]*
