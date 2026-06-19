@@ -59,23 +59,24 @@
 ---
 
 ## 3. Project Scope & Tools
+
 ### Scope
 
 | Dimension | Details |
 |------------|---------|
-| **In Scope** | 313 application records covering course preferences, applicant contact details, payment status, submission dates, and repeat application patterns |
-| **Out of Scope** | Student performance data, course completion rates, and post-enrolment outcomes — these were not available in the dataset |
-| **Time Period** | Application records covering January to April 2025 |
+| **In Scope** | 313 application records covering applicant names, roles applied for, form responses, and submission timestamps |
+| **Out of Scope** | Applicant contact details, payment data, and post-application outcomes — these were not available in the dataset |
+| **Time Period** | Application records covering January 2026 – April 2026 |
 | **Granularity** | Row-level application data (one row per application submission) |
 
 ### Tools & Technologies
 
 | Category | Tool(s) Used |
 |----------|--------------|
-| Data Cleaning | Google Sheets (deduplication, role normalization, date formatting, encoding fixes) |
+| Data Cleaning | Google Sheets (deduplication, timestamp standardization, role name standardization, encoding fixes) |
 | Data Analysis | Google Sheets (COUNTIF, Pivot Tables, sorting, filtering) |
 | Data Visualization | Google Sheets (Pivot Charts, bar charts, line charts) |
-| Dashboard Design | Google Sheets (interactive dashboard with slicers) |
+| Dashboard Design | Google Sheets (interactive dashboard) |
 | Documentation | Microsoft Word, GitHub |
 
 ---
@@ -99,174 +100,85 @@ Application-Tracking-Insights/
 
 ## 5. Data Workflow
 
-<!--
-  Show how data moved through your project - from source to output.
-  Every transformation decision should be traceable here.
-
-  WHAT GOOD LOOKS LIKE:
-  1. Source: "Monthly CSV exports pulled from the internal POS system.
-              Five files, one per region, covering Jan 2023–Jun 2024."
-  2. Ingestion: "Loaded into Python using pandas. Files concatenated into
-                 a single dataframe (approx. 340,000 rows)."
-  3. Cleaning: "Removed 1.2% of rows with null transaction IDs.
-                Standardised date formats across regional files.
-                Resolved product category naming inconsistencies (3 variants → 1)."
-  4. Transformation: "Created a returns_rate field at product-category level.
-                      Aggregated to weekly and regional grain for trend analysis."
-  5. Analysis: "Descriptive statistics, regional comparison, return rate
-                segmentation by product category."
-  6. Output: "Summary report (PDF), annotated notebook, processed CSV."
-
-  WHAT TO AVOID:
-  ❌ "Data was cleaned and analysed." (No chain. No decisions. No trust.)
--->
-
-```
-[Data Source(s)]
-      ↓
-[Ingestion / Collection Method]
-      ↓
-[Cleaning & Transformation]
-      ↓
-[Analysis / Modelling / Querying]
-      ↓
-[Output / Visualisation / Reporting]
-```
-
-1. **Source:** [Where did the data come from? Format, size, access method.]
-2. **Ingestion:** [How was it brought in?]
-3. **Cleaning:** [What issues did you find and fix?]
-4. **Transformation:** [What new fields, aggregations, or structures did you create?]
-5. **Analysis:** [What methods - statistical, visual, query-based, model-based?]
-6. **Output:** [What form do the results take?]
+1. **Source:** One Google Sheets dataset containing 313 Tech Programme application records, capturing applicant names, roles applied for, form responses, and submission timestamps.
+2. **Ingestion:** Dataset loaded and opened directly in Google Sheets for cleaning and analysis.
+3. **Cleaning:** The following data quality issues were identified and resolved:
+   - Removed duplicate application entries
+   - Standardized timestamp formatting for date-based analysis
+   - Resolved encoding errors in text fields
+   - Identified and flagged repeat applicants across multiple submission cycles
+   - Standardized role names for consistent grouping and analysis
+4. **Analysis:** Conducted exploratory data analysis using Pivot Tables and COUNTIF formulas to examine role popularity, repeat applicant patterns, form response rates, and weekly submission trends.
+5. **Visualization:** Built an interactive dashboard in Google Sheets using Pivot Charts, bar charts, and line charts to present findings clearly to a non-technical audience.
+6. **Output:** Interactive Google Sheets dashboard, written summary report (Word document), dashboard screenshots uploaded to GitHub, and full project documentation in this repository.
 
 ---
 
 ## 6. Data Model & Schema
 
-<!--
-  Define your fields so that someone reading your analysis can follow along
-  without digging through your code.
-
-  WHAT GOOD LOOKS LIKE (one row example):
-  | transaction_id | string | Unique identifier per sales transaction | TXN-00482 |
-  | return_flag    | boolean | Whether the transaction included a return | TRUE |
-  | region_code    | string | Two-letter identifier for store region | "NE" |
-
-  WHAT TO AVOID:
-  ❌ Skipping this section because "the field names are self-explanatory."
-     They're not. Not to a reviewer. Not to you in six months.
-
-  📌 FOR NON-SQL PROJECTS: Describe the shape of your dataset informally
-     if a formal schema doesn't apply. Even one paragraph is more helpful than nothing.
--->
-
-### Dataset / Table: `[name]`
+## Data Dictionary
 
 | Field Name | Data Type | Description | Example Value |
 |------------|-----------|-------------|---------------|
-| `[field_1]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
-| `[field_2]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
-| `[field_3]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
+| `Timestamp` | DateTime | Date and time application was submitted | 1/27/2026 11:48:41 |
+| `Full Name` | Text | Full name of the applicant | Promise Umoh |
+| `Role Applied For` | Text | Role the applicant applied for | Virtual Assistant |
+| `Form Response` | Text | Whether applicant confirmed details | Yes / No |
 
-> **Row count (approx.):** [X rows]
-> **Date range:** [Start] – [End]
-> **Key join / relationship:** [e.g., `orders.customer_id` → `customers.id`]
-
-*Add additional table blocks as needed for multi-table projects.*
-
----
-
+> **Row count:** 313 application records
+> **Date range:** January 2026 – April 2026
+> **Key note:** Dataset required cleaning before analysis — duplicates removed, encoding errors resolved, and timestamps standardized
 
 ---
 
-**Table Relationships Summary:**
-
-| Relationship | Join Key | Type |
-|-------------|----------|------|
-| `orders` → `customers` | `customer_id` | Many-to-One |
-| `orders` → `products` | `product_id` | Many-to-One |
-| [Add rows as needed] | | |
-
----
-
-## 8. Analysis & Metrics
-
-<!--
-  Explain what you measured and how - before you share what you found.
-
-  WHAT GOOD LOOKS LIKE:
-  Metric: "Customer Return Rate"
-  Definition: "Number of transactions flagged as returns divided by total
-               transactions, calculated at product-category and regional grain."
-  Why It Matters: "Return rate - not sales volume - was hypothesised to
-                  explain regional revenue gaps. This metric tests that hypothesis."
-
-  WHAT TO AVOID:
-  ❌ Defining a metric only in code: SUM(returns) / COUNT(transaction_id)
-     That's an implementation. Write the plain-language definition here.
-     Both belong in your project - the definition in the README,
-     the implementation in the code.
--->
+## 7. Analysis & Metrics
 
 ### Analytical Approach
 
-[Describe how you approached the analysis. Were you exploring patterns? Testing a hypothesis? Building and validating a pipeline? Be honest about your method - exploratory work is valid, just call it that.]
+This project used an *exploratory data analysis* approach - examining the cleaned application dataset to identify patterns and trends across role preferences, applicant behaviour, form response rates, and submission timing. No hypothesis was tested in advance; the goal was to let the data reveal what was happening in the application cycle.
 
 ### Key Metrics Defined
 
 | Metric | Plain-Language Definition | Why It Matters |
 |--------|--------------------------|----------------|
-| `[Metric 1]` | [What it measures, in one sentence] | [What decision or question it answers] |
-| `[Metric 2]` | [What it measures, in one sentence] | [What decision or question it answers] |
-| `[Metric 3]` | [What it measures, in one sentence] | [What decision or question it answers] |
+| `Total Applications` | Count of all application records in the dataset | Measures overall programme interest and reach |
+| `Role Popularity` | Number of applications per role | Identifies which roles are most in demand |
+| `Repeat Applicant Count` | Count of applicants who submitted more than once | Reveals applicant persistence and programme appeal |
+| `Form Response Rate` | Percentage of applicants who responded Yes vs No | Measures applicant engagement and confirmation rate |
+| `Weekly Submission Trend` | Number of applications submitted per week | Identifies peak and low application periods |
 
 ### Methods Used
 
-- [e.g., Descriptive statistics - distribution, central tendency, outlier detection]
-- [e.g., Trend analysis across [time period]]
-- [e.g., Segmentation / group comparison by [dimension]]
-- [e.g., Correlation analysis between [variable A] and [variable B]]
-- [e.g., SQL window functions for [specific aggregation]]
-- [e.g., Custom aggregation or transformation logic in [tool]]
+- Data cleaning — deduplication, timestamp standardization, role name standardization, encoding fixes
+- Descriptive statistics — total counts, percentages, and distributions across key fields
+- Pivot Tables — cross-tabulation of applications by role, form response, and week
+- COUNTIF formulas — counting specific values across the dataset
+- Trend analysis — weekly submission patterns across the application cycle
+- Data visualization — charts and dashboard to present findings clearly
+  
+---
+
+## 8. Key Insights
+
+1. **Total applications received were 313 from 281 unique applicants** - indicating strong overall interest in the Tech Programme with mostly first-time applicants.
+
+2. **Virtual Assistant is the most applied-for role with 112 applications (39.9% of total)** - dominating by a wide margin and accounting for nearly 40% of all applications confirming it as the highest demand role.
+
+3. **Customer Support/Service (63 applications, 22.4%) and Executive Assistant (35 applications, 12.5%) are the second and third most popular roles** - together with Virtual Assistant, the top 3 roles combined account for 210 applications (74.8% of total).
+
+4. **There are 16 total role categories** - showing a wide range of programme offerings, though demand is heavily concentrated in the top 3 roles.
+
+5. **The least applied-for roles each received only 1 application (0.4%)** - Video Editing, IT, Design And Creative, and Backend Web Developer all tied at the bottom with 6 applications combined representing just 3% of total suggesting these roles need stronger visibility and targeted promotion.
+
+6. **Sales & Lead Generation (18, 6.4%), Social Media Manager (14, 5%), and Copywriting/Content Writer (11, 3.9%)** form a mid-tier of roles with moderate but consistent demand.
+
+7. **Tuesday is the peak application day** - with Monday and Tuesday together recording the highest submission volumes across the week.
+
+8. **30 repeat applicants were recorded** - representing 9.6% of total applications indicating high unique applicant engagement.
 
 ---
 
-## 9. Key Insights
-
-<!--
-  Findings + implications. Not just what happened - what it means.
-
-  WHAT GOOD LOOKS LIKE:
-  ✅ "Return rates, not sales volume, explain Region A's underperformance.
-      Region A's return rate on home goods was 34% - more than double the
-      company average. Revenue was not lost at the point of sale; it was
-      lost post-sale through refunds. This points to a fulfilment or
-      product quality issue specific to that region, not a demand problem."
-
-  WHAT TO AVOID:
-  ❌ "Region A had lower revenue than other regions in Q4."
-     (That's an observation. It describes what happened.
-      An insight says what it means and where to look next.)
-
-  Aim for 3–6 insights. Quality over quantity.
--->
-
-**Insight 1: [Short descriptive headline]**
-[What you found + what it suggests. One short paragraph.]
-
-**Insight 2: [Short descriptive headline]**
-[What you found + what it suggests.]
-
-**Insight 3: [Short descriptive headline]**
-[What you found + what it suggests.]
-
-**Insight 4 (if applicable): [Short descriptive headline]**
-[What you found + what it suggests.]
-
----
-
-## 10. Recommendations
+## 9. Recommendations
 
 <!--
   Action-oriented. Addressed to a real audience.
@@ -295,61 +207,7 @@ Application-Tracking-Insights/
 
 ---
 
-## 11. Assumptions & Limitations
-
-<!--
-  WHAT GOOD LOOKS LIKE:
-  Assumption: "Transaction records were assumed to be complete for all five regions.
-               No validation was performed against source system record counts."
-  Limitation: "The analysis cannot distinguish between returns initiated by
-               the customer vs. returns initiated by the business (e.g., recalls).
-               If business-initiated returns are concentrated in Region A, the
-               return rate finding may reflect a policy decision, not a quality issue."
-
-  WHAT TO AVOID:
-  ❌ Leaving this section blank or writing "None known."
-     Every project has limitations. Documenting them is a sign of
-     analytical maturity - not a confession of failure.
--->
-
-### Assumptions
-- [What did you treat as true without being able to verify?]
-- [What simplifications did you make for scope or feasibility?]
-- [What domain rules or definitions did you accept as given?]
-
-### Limitations
-- [What gaps exist in the data?]
-- [What analysis was out of scope but could affect interpretation?]
-- [What would a more rigorous version of this project include?]
-- [Are there known biases in the data source or collection method?]
-
-> *The goal here is pre-emptive Q&A. What would a thoughtful skeptic push back on? Document the answer here, before they ask.*
-
----
-
-## 12. Future Enhancements
-
-<!--
-  WHAT GOOD LOOKS LIKE:
-  ✅ "Automate the monthly data pull from the POS export folder using
-      a scheduled Python script, replacing the current manual process."
-  ✅ "Expand the return rate analysis to include carrier-level data,
-      which was unavailable in this dataset but exists in the logistics system."
-
-  WHAT TO AVOID:
-  ❌ "Add a machine learning model."
-     (Vague, and disconnected from the actual findings of this project.)
-  ❌ Listing aspirational features that don't follow logically from the work.
--->
-
-- [ ] [Enhancement 1 - specific and traceable to a real gap in this project]
-- [ ] [Enhancement 2]
-- [ ] [Enhancement 3]
-- [ ] [Enhancement 4]
-
----
-
-## 13. Deliverables
+## 10. Deliverables
 
 | Deliverable | Description | Location |
 |-------------|-------------|----------|
@@ -359,7 +217,7 @@ Application-Tracking-Insights/
 
 ---
 
-## 14. Author
+## 11. Author
 
 **[Your Name]**
 [Your role or title - current or target]
