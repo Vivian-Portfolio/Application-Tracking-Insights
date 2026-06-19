@@ -65,9 +65,9 @@
 | Dimension | Details |
 |------------|---------|
 | **In Scope** | 313 application records covering applicant names, roles applied for, form responses, and submission timestamps |
-| **Out of Scope** | Applicant contact details, payment data, and post-application outcomes — these were not available in the dataset |
-| **Time Period** | Application records covering January 2026 – April 2026 |
-| **Granularity** | Row-level application data (one row per application submission) |
+| **Out of Scope** | Applicant contact details, payment data, and post-application outcomes - these were not available in the dataset |
+| **Time Period** | Application records covering January 2026 - April 2026 |
+| **Granularity** | Row -level application data (one row per application submission) |
 
 ### Tools & Technologies
 
