@@ -1,5 +1,5 @@
-# [Project Title]
-> *One sentence. What did you analyze, build, or solve - and why does it matter?*
+# Application Tracking Insight 
+> *Analyzed 313 Tech Programme application records using Google Sheets to uncover course popularity trends, applicant behaviour patterns, payment status insights, and weekly submission trends.*
 
 ---
 
@@ -22,147 +22,79 @@
 3. [Project Scope & Tools](#3-project-scope--tools)
 4. [Repository Structure](#4-repository-structure)
 5. [Data Workflow](#5-data-workflow)
-6. [Analysis & Metrics](#6-analysis--metrics)
-7. [Key Insights](#7-key-insights)
-8. [Recommendations](#8-recommendations)
-9. [Deliverables](#9-deliverables)
-10. [Author](#10-author)
+6. [Data Model & Schema](#6-data-model--schema)
+7. [Analysis & Metrics](#7-analysis--metrics)
+8. [Key Insights](#8-key-insights)
+9. [Recommendations](#9-recommendations)
+10. [Deliverables](#10-deliverables)
+11. [Author](#11-author)
 
 ---
 
 ## 1. Project Overview
 
-<!--
-  Write 3–5 sentences in plain language.
-  Cover: context → problem → approach → outcome.
-  Read it out loud. If it sounds like a form - rewrite it.
+**Context:** A Tech Training Academy runs a programme that accepts applications from prospective students across multiple courses. The Academy needed a structured analysis of its application data to understand applicant behaviour, course demand, and payment patterns.
 
-  WHAT GOOD LOOKS LIKE:
-  "A mid-size retail business was seeing inconsistent revenue across
-  its regional stores but couldn't identify the root cause. This project
-  explored 18 months of transaction data across five regions to determine
-  whether underperformance was driven by sales volume, pricing, or return
-  rates. The analysis revealed that one region's gap was almost entirely
-  explained by an unusually high return rate on a single product category -
-  a finding invisible in the company's top-level reporting."
+**Problem Statement:** Application records were collected but had not been analyzed - there was no clear picture of which courses were most popular, how many applicants were repeat applicants, what the payment completion rate looked like, or how submissions varied week by week.
 
-  WHAT TO AVOID:
-  "This project analyzes sales data to find trends and insights."
-  (Too vague. Could describe 10,000 projects. Describes none of them.)
--->
+**Approach:** Cleaned and transformed 313 application records in Google Sheets using data cleaning techniques including deduplication, phone number normalization, date formatting, and handling of encoding errors. Conducted exploratory data analysis using Pivot Tables, COUNTIF, and charts to identify patterns across course preferences, applicant behaviour, payment status, and weekly submission trends. Built an interactive dashboard to present findings visually.
 
-**Context:** [The business, research, or personal situation that motivated this project.]
-
-**Problem Statement:** [The specific question or challenge you were addressing.]
-
-**Approach:** [In 1–2 sentences - how did you tackle it?]
-
-**Outcome:** [What did you produce or discover?]
+**Outcome:** Delivered a clean, interactive Google Sheets dashboard revealing key trends in course popularity, repeat applicant patterns, payment performance, and submission behaviour -findings were presented to the Internflare Academy CEO.
 
 ---
 
 ## 2. Objectives
+- **Primary Objective:** Conduct exploratory data analysis on 313 Tech Programme application records to uncover meaningful patterns in course demand, applicant behaviour, and payment performance.
 
-<!--
-  Write objectives that are specific enough to succeed or fail.
-  Use action-oriented verbs: Identify, Determine, Quantify, Build, Evaluate.
+- **Secondary Objective 1:** Identify the most popular courses by total application count to inform future programme planning.
 
-  WHAT GOOD LOOKS LIKE:
-  ✅ "Determine whether customer churn rate correlates with support ticket volume."
-  ✅ "Identify the top three revenue-driving product categories across all regions."
-  ✅ "Build a reproducible pipeline that ingests and cleans daily sales exports."
+- **Secondary Objective 2:** Detect repeat applicants and understand their behaviour patterns across multiple application cycles.
 
-  WHAT TO AVOID:
-  ❌ "Explore the data."
-  ❌ "Gain insights."
-  ❌ "Understand trends."
-  (These can't fail - which means they can't succeed either.)
--->
+- **Secondary Objective 3:** Analyze payment status across applicants to determine payment completion rates and outstanding balances.
 
-- **Primary Objective:** [The main thing you set out to do]
-- **Secondary Objective 1:** [Supporting goal]
-- **Secondary Objective 2:** [Supporting goal]
-- **Secondary Objective 3:** [Remove if not applicable]
+- **Secondary Objective 4:** Examine weekly submission trends to identify peak and low application periods throughout the programme cycle.
 
-> 💡 *Every analysis decision in this project traces back to one of these objectives.*
+> 💡 Every analysis decision in this project traces back to one of these objectives.
 
 ---
 
 ## 3. Project Scope & Tools
-
 ### Scope
 
-<!--
-  WHAT GOOD LOOKS LIKE:
-  In Scope: "Transaction-level data for Regions A–E, Jan 2023–Jun 2024.
-             Analysis covers revenue, return rates, and product category performance."
-  Out of Scope: "Customer demographics and marketing spend data were excluded -
-                 demographic data was incomplete for two regions, and marketing
-                 data sits in a separate system outside this engagement."
-
-  WHAT TO AVOID:
-  ❌ Leaving Out of Scope blank. This is the section that protects your credibility.
-     If you don't define the fence, reviewers assume you missed things.
--->
-
 | Dimension | Details |
-|-----------|---------|
-| **In Scope** | [What is included - data sources, time periods, segments] |
-| **Out of Scope** | [What you explicitly excluded - and a brief reason why] |
-| **Time Period** | [Date range of the data or the project itself] |
-| **Granularity** | [Unit of analysis - row-level, daily aggregates, per-user, etc.] |
+|------------|---------|
+| **In Scope** | 313 application records covering course preferences, applicant contact details, payment status, submission dates, and repeat application patterns |
+| **Out of Scope** | Student performance data, course completion rates, and post-enrolment outcomes — these were not available in the dataset |
+| **Time Period** | Application records covering January to April 2025 |
+| **Granularity** | Row-level application data (one row per application submission) |
 
 ### Tools & Technologies
 
-<!--
-  List only what you actually used on this project.
-  This is not your skills section - it's the project's technical context.
--->
-
 | Category | Tool(s) Used |
-|----------|-------------|
-| Data Storage | [e.g., PostgreSQL, CSV files, BigQuery, S3] |
-| Data Processing | [e.g., Python, R, SQL, Excel, dbt] |
-| Analysis | [e.g., pandas, dplyr, custom SQL queries] |
-| Visualization | [e.g., Matplotlib, Tableau, Power BI, Looker] |
-| Version Control | [e.g., Git / GitHub] |
-| Documentation | [e.g., Markdown, Notion] |
-| Other | [Any additional tools] |
+|----------|--------------|
+| Data Cleaning | Google Sheets (deduplication, role normalization, date formatting, encoding fixes) |
+| Data Analysis | Google Sheets (COUNTIF, Pivot Tables, sorting, filtering) |
+| Data Visualization | Google Sheets (Pivot Charts, bar charts, line charts) |
+| Dashboard Design | Google Sheets (interactive dashboard with slicers) |
+| Documentation | Microsoft Word, GitHub |
 
 ---
-
 ## 4. Repository Structure
-
 ```
-[project-root]/
-│
+Application-Tracking-Insights/
+|
 ├── data/
-│   ├── raw/                  # Original, unmodified source data - never edited
-│   ├── processed/            # Cleaned and transformed data
-│   └── external/             # Reference data, lookup tables, third-party files
-│
-├── notebooks/                # Jupyter, R Markdown, or Colab notebooks
-│
-├── scripts/                  # Reusable .py, .R, or .sh processing files
-│
-├── queries/                  # SQL files (retain this folder for SQL-heavy projects)
-│   ├── exploratory/          # Ad-hoc or investigative queries
-│   ├── transformations/      # Cleaning and reshaping logic
-│   └── final/                # Production-ready or presentation queries
-│
-├── reports/                  # Final outputs: PDFs, slide decks, Word docs
-│
-├── visuals/                  # Exported charts, dashboard screenshots, ERD diagrams
-│
-├── docs/                     # Data dictionaries, schema notes, reference material
-│
-├── project_metadata.yml      # Machine-readable metadata (optional)
-└── README.md                 # You are here
+|   └── raw/              # Original, unmodified application dataset
+|
+├── docs/                 # Data dictionary and project notes
+|
+├── reports/              # Written summary report
+|
+├── visuals/              # Dashboard screenshots and charts
+|
+├── README.md             # You are here
+└── project_metadata.yml  # Project metadata
 ```
-
-> ⚠️ *Delete folders you didn't use. An empty folder is worse than no folder.*
-> SQL-heavy projects: keep `queries/`. Analysis-only projects: keep `notebooks/`. Both? Keep both.
-
 ---
 
 ## 5. Data Workflow
