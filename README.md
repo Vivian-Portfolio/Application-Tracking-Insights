@@ -226,7 +226,4 @@ This project used an *exploratory data analysis* approach - examining the cleane
 - 💼 [Portfolio or GitHub profile URL]
 - 📧 [Email - optional]
 
----
-
 *Last updated: [Month YYYY]*
-*If this template helped you, consider starring the repository.*
