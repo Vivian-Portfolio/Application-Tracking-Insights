@@ -149,12 +149,12 @@ This project used an *exploratory data analysis* approach - examining the cleane
 
 ### Methods Used
 
-- Data cleaning — deduplication, timestamp standardization, role name standardization, encoding fixes
-- Descriptive statistics — total counts, percentages, and distributions across key fields
-- Pivot Tables — cross-tabulation of applications by role, form response, and week
-- COUNTIF formulas — counting specific values across the dataset
-- Trend analysis — weekly submission patterns across the application cycle
-- Data visualization — charts and dashboard to present findings clearly
+- Data cleaning - deduplication, timestamp standardization, role name standardization, encoding fixes
+- Descriptive statistics - total counts, percentages, and distributions across key fields
+- Pivot Tables - cross-tabulation of applications by role, form response, and week
+- COUNTIF formulas - counting specific values across the dataset
+- Trend analysis - weekly submission patterns across the application cycle
+- Data visualization - charts and dashboard to present findings clearly
   
 ---
 
