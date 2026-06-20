@@ -200,7 +200,7 @@ This project used an *exploratory data analysis* approach - examining the cleane
 | EDA Summary | Multi-sheet Google Sheets workbook containing cleaned data, pivot tables, EDA summary, applicant behaviour analysis, application analysis, and role performance sheets | data/raw/ |
 | Summary Report | Written Word document summarizing findings, insights, and recommendations | reports/Application_Tracking_Insights_Summary_Report.docx |
 
-**| `Google Sheets Dashboard | Interactive live dashboard | [View Dashboard](https://docs.google.com/spreadsheets/d/14W9ez4wrvLjopsB3UZEIsBbGtRZCmfBJPrxggg2kOvE/edit?` |**
+**| `Google Sheets Dashboard | Interactive live dashboard | [View Dashboard]` https://docs.google.com/spreadsheets/d/14W9ez4wrvLjopsB3UZEIsBbGtRZCmfBJPrxggg2kOvE/edit? |**
 ---
 
 ## 11. Author
