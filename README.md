@@ -72,11 +72,11 @@
 ### Tools & Technologies
 
 | Category | Tool(s) Used |
-|----------|--------------|
 | Data Cleaning | Google Sheets (deduplication, timestamp standardization, role name standardization, encoding fixes) |
 | Data Analysis | Google Sheets (COUNTIF, Pivot Tables, sorting, filtering) |
 | Data Visualization | Google Sheets (Pivot Charts, bar charts, line charts) |
 | Dashboard Design | Google Sheets (interactive dashboard) |
+| Presentation | Microsoft PowerPoint (slide deck summarizing key insights and recommendations for senior leadership) |
 | Documentation | Microsoft Word, GitHub |
 
 ---
@@ -196,11 +196,11 @@ This project used an *exploratory data analysis* approach - examining the cleane
 
 | Deliverable | Description | Location |
 |-------------|-------------|----------|
-| Google Sheets Dashboard | Interactive dashboard showing role performance, application trends, payment status, and weekly submissions | visuals/Application_Tracking_Dashboard.png |
-| EDA Summary | Multi-sheet Google Sheets workbook containing cleaned data, pivot tables, EDA summary, applicant behaviour analysis, application analysis, and role performance sheets | data/raw/ |
+| Google Sheets Dashboard | Interactive live dashboard | [View Dashboard] https://docs.google.com/spreadsheets/d/14W9ez4wrvLjopsB3UZEIsBbGtRZCmfBJPrxggg2kOvE/edit?) |
+| Presentation Slides | Slide deck summarizing key insights and recommendations presented to senior leadership | reports/Application_Tracking_Insights_Presentation.pptx |
 | Summary Report | Written Word document summarizing findings, insights, and recommendations | reports/Application_Tracking_Insights_Summary_Report.docx |
+| Raw Dataset | Original application dataset | data/raw/ |
 
-**| `Google Sheets Dashboard | Interactive live dashboard | [View Dashboard]` https://docs.google.com/spreadsheets/d/14W9ez4wrvLjopsB3UZEIsBbGtRZCmfBJPrxggg2kOvE/edit? |**
 ---
 
 ## 11. Author
