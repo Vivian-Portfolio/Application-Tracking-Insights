@@ -206,6 +206,7 @@ This project used an *exploratory data analysis* approach - examining the cleane
 ## 11. Author
 
 **Vivian Okwara**
+
 Data Analyst | lagos, Nigeria
 
 - 🔗 https://Linkedin.com/in/okwara-vivian
