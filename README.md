@@ -212,4 +212,4 @@ Data Analyst | lagos, Nigeria
 - 💼 https://Vivian-Portfolio.github.io
 - 📧 okwaravivian26@gmail.com
 ---
-*Last updated: June 2026*
+**Last updated: June 2026**
