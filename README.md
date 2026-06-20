@@ -70,8 +70,7 @@
 | **Granularity** | Row -level application data (one row per application submission) |
 
 ### Tools & Technologies
-
-|Category | Tool(s) Used |
+| Category | Tool(s) Used |
 | Data Cleaning | Google Sheets (deduplication, timestamp standardization, role name standardization, encoding fixes) |
 | Data Analysis | Google Sheets (COUNTIF, Pivot Tables, sorting, filtering) |
 | Data Visualization | Google Sheets (Pivot Charts, bar charts, line charts) |
