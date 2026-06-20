@@ -180,30 +180,15 @@ This project used an *exploratory data analysis* approach - examining the cleane
 
 ## 9. Recommendations
 
-<!--
-  Action-oriented. Addressed to a real audience.
-  Tied explicitly to the insight that supports each one.
-
-  WHAT GOOD LOOKS LIKE:
-  Priority: High
-  Recommendation: "Conduct a fulfilment audit for home goods deliveries
-                   in Region A - specifically investigating whether returns
-                   correlate with a particular warehouse, carrier, or SKU batch."
-  Based On: Insight 1 - return rate anomaly in Region A
-  Owner: Operations / Supply Chain team
-
-  WHAT TO AVOID:
-  ❌ "Improve the return rate."
-     (Not actionable. Doesn't say who, how, or where to start.)
-  ❌ "Further analysis is needed."
-     (This is a placeholder, not a recommendation.)
--->
-
 | Priority | Recommendation | Based On | Suggested Owner |
 |----------|---------------|----------|-----------------|
-| High | [Specific, actionable step] | [Insight it comes from] | [Who should act] |
-| Medium | [Specific, actionable step] | [Insight it comes from] | [Who should act] |
-| Low | [Exploratory or longer-term suggestion] | [Insight it comes from] | [Who should act] |
+| High | Invest more in promoting Virtual Assistant tracks to sustain and grow the already strong demand - nearly 40% of all applicants chose this role | Insight 2 - Virtual Assistant leads with 112 applications (39.9%) | Marketing team |
+| High | Schedule communications and promotional campaigns on Mondays and Tuesdays for maximum reach and engagement | Insight 7 - Tuesday is the peak application day | Marketing / Communications team |
+| High | Follow up on the 24.3% Unknown payment records to confirm or update their payment status | Dashboard - 24.3% of payment statuses are unconfirmed | Finance / Admin team |
+| Medium | Create targeted campaigns for low-performing roles - Video Editing, IT, Design And Creative, and Backend Web Developer - which each received only 1 application (0.4%) | Insight 5 - These roles have the lowest uptake at 0.4% each | Marketing team |
+| Medium | Develop mid-tier role promotion strategy for Sales & Lead Generation, Social Media Manager, and Copywriting/Content Writer to grow their moderate demand | Insight 6 - Mid-tier roles average 3.9% to 6.4% of applications | Marketing / Programme team |
+| Medium | Stagger promotional campaigns across January and March to avoid a February-only spike and create a more consistent application flow | Dashboard - Over 75% of applications concentrated in February | Marketing / Programme team |
+| Low | Investigate why repeat applicants are low (9.6%) - whether this reflects satisfaction with the first application process or lack of awareness that reapplication is possible | Insight 8 - Only 30 repeat applicants out of 313 total | Programme Management team |
 
 ---
 
@@ -211,19 +196,20 @@ This project used an *exploratory data analysis* approach - examining the cleane
 
 | Deliverable | Description | Location |
 |-------------|-------------|----------|
-| [Name] | [What it contains] | [`/path/to/file`] |
-| [Name] | [What it contains] | [`/path/to/file`] |
-| [Name] | [What it contains] | [`/path/to/file`] |
+| Google Sheets Dashboard | Interactive dashboard showing role performance, application trends, payment status, and weekly submissions | visuals/Application_Tracking_Dashboard.png |
+| EDA Summary | Multi-sheet Google Sheets workbook containing cleaned data, pivot tables, EDA summary, applicant behaviour analysis, application analysis, and role performance sheets | data/raw/ |
+| Summary Report | Written Word document summarizing findings, insights, and recommendations | reports/Application_Tracking_Insights_Summary_Report.docx |
+
 
 ---
 
 ## 11. Author
 
-**[Your Name]**
-[Your role or title - current or target]
+**Vivian Okwara**
+Data Analyst | lagos, Nigeria
 
-- 🔗 [LinkedIn URL]
-- 💼 [Portfolio or GitHub profile URL]
-- 📧 [Email - optional]
+- 🔗 [LinkedIn URL] (https://Linkedin.com/in /okwara-vivian)
+- 💼 [Portfolio ] (https://Vivian-Portfolio.github.io)
+- 📧 okwaravivian26@gmail.com
 ---
 *Last updated: [Month YYYY]*
