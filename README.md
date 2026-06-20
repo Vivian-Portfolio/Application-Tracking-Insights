@@ -208,8 +208,8 @@ This project used an *exploratory data analysis* approach - examining the cleane
 **Vivian Okwara**
 Data Analyst | lagos, Nigeria
 
-- 🔗 [LinkedIn URL] (https://Linkedin.com/in /okwara-vivian)
-- 💼 [Portfolio ] (https://Vivian-Portfolio.github.io)
+- 🔗 https://Linkedin.com/in /okwara-vivian
+- 💼 https://Vivian-Portfolio.github.io
 - 📧 okwaravivian26@gmail.com
 ---
-*Last updated: [Month YYYY]*
+*Last updated: June 2026*
