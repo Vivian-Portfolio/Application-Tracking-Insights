@@ -1,4 +1,4 @@
-# Application Tracking Insight 
+# Application Tracking Insight - Google Sheets EDA
 > *Analyzed 313 Tech Programme application records using Google Sheets to uncover course popularity trends, applicant behaviour patterns, payment status insights, and weekly submission trends.*
 
 ---
@@ -212,4 +212,4 @@ Data Analyst | lagos, Nigeria
 - 💼 https://Vivian-Portfolio.github.io
 - 📧 okwaravivian26@gmail.com
 ---
-**Last updated: June 2026**
+*Last updated: June 2026*
