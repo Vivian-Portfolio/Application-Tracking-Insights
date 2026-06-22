@@ -195,7 +195,7 @@ This project used an *exploratory data analysis* approach - examining the cleane
 
 | Deliverable | Description | Location |
 |-------------|-------------|----------|
-| Google Sheets Dashboard | Interactive live dashboard | [View Dashboard] https://docs.google.com/spreadsheets/d/14W9ez4wrvLjopsB3UZEIsBbGtRZCmfBJPrxggg2kOvE/edit?) |
+| Google Sheets Dashboard | Interactive live dashboard | https://docs.google.com/spreadsheets/d/14W9ez4wrvLjopsB3UZEIsBbGtRZCmfBJPrxggg2kOvE/edit?) |
 | Presentation Slides | Slide deck summarizing key insights and recommendations presented to senior leadership | reports/Application_Tracking_Insights_Presentation.pptx |
 | Summary Report | Written Word document summarizing findings, insights, and recommendations | reports/Application_Tracking_Insights_Summary_Report.docx |
 | Raw Dataset | Original application dataset | data/raw/ |
